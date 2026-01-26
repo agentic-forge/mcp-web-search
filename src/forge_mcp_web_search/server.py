@@ -240,7 +240,9 @@ def main():
     # These are from uvicorn's websocket protocol using deprecated websockets APIs
     # See: https://websockets.readthedocs.io/en/stable/howto/upgrade.html
     warnings.filterwarnings("ignore", message="websockets.legacy is deprecated")
-    warnings.filterwarnings("ignore", message="websockets.server.WebSocketServerProtocol is deprecated")
+    warnings.filterwarnings(
+        "ignore", message="websockets.server.WebSocketServerProtocol is deprecated"
+    )
 
     # Suppress benign ClosedResourceError on client disconnect
     logging.getLogger("mcp.server.streamable_http").setLevel(logging.CRITICAL)
